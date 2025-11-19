@@ -3,16 +3,10 @@
 4. **Edit the .gitignore file** to exclude your dataset and other files. Add something like:
 ```
 # Dataset files
-*.csv
-*.pkl
 *.xlsx
-*.json
-*.docx
-*.txt
 data/
 datasets/
 *.db
-*.h5
 
 # Python
 __pycache__/

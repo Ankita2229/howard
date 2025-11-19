@@ -1,0 +1,7 @@
+Metric,Model,Strategy,Score
+AUROC,LightGBM,Simple (Median/Mode),1.0
+PR AUC,LightGBM,Simple (Median/Mode),1.0
+Recall (default),LightGBM,Simple (Median/Mode),1.0
+Recall @0.3,Logistic Regression,Simple (Median/Mode),1.0
+Recall @0.5,LightGBM,Simple (Median/Mode),1.0
+Recall @0.7,LightGBM,Simple (Median/Mode),1.0

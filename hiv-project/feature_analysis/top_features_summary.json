@@ -1,0 +1,43 @@
+{
+  "Top_10_Features": [
+    "logvl",
+    "APOB",
+    "vload_category",
+    "APOBgr",
+    "visit",
+    "prev_suppression",
+    "hemoglob_missing",
+    "treatment_intensity",
+    "race",
+    "vload_missing"
+  ],
+  "Top_5_Features": [
+    "logvl",
+    "APOB",
+    "vload_category",
+    "APOBgr",
+    "visit"
+  ],
+  "Top_20_Features": [
+    "logvl",
+    "APOB",
+    "vload_category",
+    "APOBgr",
+    "visit",
+    "prev_suppression",
+    "hemoglob_missing",
+    "treatment_intensity",
+    "race",
+    "vload_missing",
+    "time_on_study_years",
+    "on_any_treatment",
+    "on_haart",
+    "nrti",
+    "CD4_8",
+    "pi",
+    "cd4_cd8_ratio_missing",
+    "duration",
+    "durationy",
+    "nnrti"
+  ]
+}

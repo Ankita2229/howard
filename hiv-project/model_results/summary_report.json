@@ -1,0 +1,26 @@
+{
+  "Best Overall": {
+    "Model": "LightGBM",
+    "Strategy": "Simple (Median/Mode)",
+    "AUROC": 1.0,
+    "PR AUC": 1.0,
+    "Recall": 1.0
+  },
+  "Best AUROC": {
+    "Model": "LightGBM",
+    "Strategy": "Simple (Median/Mode)",
+    "Score": 1.0
+  },
+  "Best PR AUC": {
+    "Model": "LightGBM",
+    "Strategy": "Simple (Median/Mode)",
+    "Score": 1.0
+  },
+  "Best Recall": {
+    "Model": "LightGBM",
+    "Strategy": "Simple (Median/Mode)",
+    "Score": 1.0
+  },
+  "Best Strategy": "Domain-Informed",
+  "Best Model Type": "LightGBM"
+}
