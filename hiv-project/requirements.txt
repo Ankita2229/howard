@@ -1,0 +1,28 @@
+# Python Requirements for HIV Viral Load Suppression Prediction Project
+# Ankita Rathod - Course Project
+# Install with: pip install -r requirements.txt
+
+# Core Data Science Libraries
+pandas==1.5.3
+numpy==1.24.2
+scipy==1.10.1
+
+# Machine Learning
+scikit-learn==1.2.2
+xgboost==1.7.5
+lightgbm>=3.3.5
+
+# Visualization
+matplotlib==3.7.1
+seaborn==0.12.2
+
+# Model Interpretation
+shap>=0.41.0
+
+# Jupyter Environment
+jupyter>=1.0.0
+notebook>=6.5.4
+ipykernel>=6.21.0
+
+# Optional but Recommended
+joblib>=1.2.0  # Model serialization
