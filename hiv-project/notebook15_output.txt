@@ -1,0 +1,275 @@
+================================================================================
+NOTEBOOK 15: EXTERNAL VALIDATION PIPELINE
+================================================================================
+
+Libraries loaded successfully!
+
+================================================================================
+1. LOADING DATA
+================================================================================
+
+Original dataset shape: (45920, 48)
+
+Target variable distribution:
+undetectable
+0.0    21947
+1.0    11064
+Name: count, dtype: int64
+
+Missing targets: 12909 (28.1%)
+
+Feature set: 27 features
+Valid samples: 33011
+
+Class distribution:
+  Not suppressed (0): 21947 (66.5%)
+  Suppressed (1): 11064 (33.5%)
+  Imbalance ratio: 1.98:1
+
+================================================================================
+2. CREATING EXTERNAL VALIDATION SET (20%)
+================================================================================
+
+Internal (80% - for training/tuning):
+  Total samples: 26408
+  Class 0 (not suppressed): 17557 (66.5%)
+  Class 1 (suppressed): 8851 (33.5%)
+
+External Validation (20% - HELD OUT):
+  Total samples: 6603
+  Class 0 (not suppressed): 4390 (66.5%)
+  Class 1 (suppressed): 2213 (33.5%)
+
+================================================================================
+3. PREPROCESSING
+================================================================================
+
+Internal data preprocessed: (26408, 27)
+External data preprocessed: (6603, 27)
+
+================================================================================
+4. APPLYING SMOTE OVERSAMPLING
+================================================================================
+
+Before SMOTE:
+  Class 0: 17557
+  Class 1: 8851
+  Ratio: 1.98:1
+
+After SMOTE:
+  Class 0: 17557
+  Class 1: 17557
+  Ratio: 1.00:1
+
+Balanced internal data shape: (35114, 27)
+
+Training set: (28091, 27)
+Validation set: (7023, 27)
+
+================================================================================
+5. TRAINING MODELS
+================================================================================
+
+Training Logistic Regression...
+Validation AUROC: 0.8479
+
+Training SVM...
+Validation AUROC: 0.8606
+
+Training Random Forest...
+Validation AUROC: 0.8871
+
+Training XGBoost...
+Validation AUROC: 0.8800
+
+Training Deep Neural Network...
+Validation AUROC: 0.8755
+
+================================================================================
+6. INTERNAL VALIDATION (5-FOLD CROSS-VALIDATION)
+================================================================================
+
+Cross-validating Logistic Regression...
+  AUROC: 0.8387 ± 0.0032
+  95% CI: [0.8324, 0.8450]
+
+Cross-validating SVM...
+  AUROC: 0.8521 ± 0.0023
+  95% CI: [0.8475, 0.8566]
+
+Cross-validating Random Forest...
+  AUROC: 0.8819 ± 0.0027
+  95% CI: [0.8767, 0.8871]
+
+Cross-validating XGBoost...
+  AUROC: 0.8756 ± 0.0032
+  95% CI: [0.8694, 0.8818]
+
+Validating Deep Neural Network...
+  AUROC: 0.8755
+
+================================================================================
+INTERNAL CV RESULTS
+================================================================================
+
+              Model  Mean CV AUROC  Std CV AUROC  Min CV AUROC  Max CV AUROC  95% CI Lower  95% CI Upper
+Logistic Regression       0.838682      0.003225      0.834208      0.843948      0.832360      0.845003
+                SVM       0.852069      0.002329      0.847898      0.854033      0.847504      0.856634
+      Random Forest       0.881891      0.002653      0.877187      0.884509      0.876690      0.887091
+            XGBoost       0.875579      0.003155      0.870241      0.878825      0.869395      0.881763
+Deep Neural Network       0.875500           N/A           N/A           N/A           N/A           N/A
+
+================================================================================
+7. EXTERNAL VALIDATION (HELD-OUT TEST SET)
+================================================================================
+
+External set: 6603 samples (NEVER seen during training)
+
+Evaluating Logistic Regression...
+  AUROC: 0.8386
+  PR AUC: 0.6750
+  Accuracy: 0.7628
+  Precision: 0.6152
+  Recall: 0.7808
+  F1 Score: 0.6882
+
+Evaluating SVM...
+  AUROC: 0.8498
+  PR AUC: 0.7074
+  Accuracy: 0.7695
+  Precision: 0.6205
+  Recall: 0.8039
+  F1 Score: 0.7004
+
+Evaluating Random Forest...
+  AUROC: 0.8655
+  PR AUC: 0.7349
+  Accuracy: 0.7804
+  Precision: 0.6351
+  Recall: 0.8102
+  F1 Score: 0.7121
+
+Evaluating XGBoost...
+  AUROC: 0.8569
+  PR AUC: 0.7220
+  Accuracy: 0.7728
+  Precision: 0.6257
+  Recall: 0.8021
+  F1 Score: 0.7030
+
+Evaluating Deep Neural Network...
+  AUROC: 0.8625
+  PR AUC: 0.7218
+  Accuracy: 0.7786
+  Precision: 0.6263
+  Recall: 0.8414
+  F1 Score: 0.7181
+
+================================================================================
+EXTERNAL VALIDATION RESULTS
+================================================================================
+
+              Model    AUROC   PR AUC  Accuracy  Precision   Recall  F1 Score
+Logistic Regression 0.838630 0.675046  0.762835   0.615166 0.780840  0.688172
+                SVM 0.849845 0.707350  0.769499   0.620509 0.803886  0.700394
+      Random Forest 0.865495 0.734904  0.780403   0.635140 0.810212  0.712073
+            XGBoost 0.856862 0.722025  0.772831   0.625661 0.802079  0.702970
+Deep Neural Network 0.862500 0.721800  0.778600   0.626300 0.841400  0.718100
+
+================================================================================
+8. INTERNAL vs EXTERNAL PERFORMANCE COMPARISON
+================================================================================
+
+              Model  Internal AUROC  External AUROC      Gap Overfitting Risk
+Logistic Regression        0.838682        0.838630 0.000052              Low
+                SVM        0.852069        0.849845 0.002223              Low
+      Random Forest        0.881891        0.865495 0.016396              Low
+            XGBoost        0.875579        0.856862 0.018718              Low
+Deep Neural Network        0.875500        0.862500 0.013000              Low
+
+================================================================================
+9. FEATURE IMPORTANCE ANALYSIS
+================================================================================
+
+Random Forest - Top 15 Features:
+  Feature  Importance
+     nrti    0.202256
+    CD4_8    0.173493
+     CD4N    0.112897
+  sqrtcd4    0.100593
+       pi    0.068706
+    nnrti    0.064720
+durationy    0.058790
+ duration    0.057238
+ ageatvis    0.037259
+     CD8N    0.031434
+  sqrtcd8    0.030815
+ hemoglob    0.029668
+  anydrug    0.006320
+ HgbgenSS    0.003351
+      Hgb    0.003085
+
+Random Forest - Bottom 10 Features (candidates for removal):
+  Feature  Importance
+   APOBgr    0.002651
+     APOB    0.002428
+genotype3    0.002236
+ genotype    0.002214
+     call    0.002119
+     race    0.001607
+   apofer    0.000186
+    ferss    0.000142
+  APOBgr2    0.000025
+    aposs    0.000018
+
+XGBoost - Top 15 Features:
+ Feature  Importance
+    nrti    0.334197
+   CD4_8    0.185219
+    CD4N    0.102998
+      pi    0.095735
+   nnrti    0.066749
+hemoglob    0.045605
+duration    0.040411
+ anydrug    0.020588
+    call    0.020298
+    race    0.017293
+     Hgb    0.016941
+ sqrtcd4    0.015302
+ageatvis    0.014961
+  APOBEC    0.009310
+ sqrtcd8    0.008398
+
+================================================================================
+EXECUTION COMPLETE!
+================================================================================
+
+All results saved to 'external_validation_results/' directory
+
+Key files:
+  - internal_cv_results.csv
+  - external_validation_performance.csv
+  - internal_vs_external_comparison.csv
+  - rf_feature_importance.csv
+  - xgb_feature_importance.csv
+  - dnn_external_validated.h5 (Deep Neural Network model)
+
+================================================================================
+SUMMARY OF FINDINGS
+================================================================================
+
+Best External AUROC: Random Forest
+  AUROC: 0.8655
+  F1 Score: 0.7121
+
+Best F1 Score: Deep Neural Network
+  AUROC: 0.8625
+  F1 Score: 0.7181
+
+Most Overfitting: XGBoost
+  Gap: 0.0187 (Low)
+
+Best Generalization: Logistic Regression
+  Gap: 0.0001 (Low)
+
+================================================================================
