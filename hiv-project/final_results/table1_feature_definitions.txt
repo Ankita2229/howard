@@ -1,0 +1,31 @@
+TABLE 1. Feature Definitions and Data Types
+========================================================================================================================
+
+  Feature                                        Description        Type      Unit/Scale    Category                       Clinical Interpretation
+     CD4N                                  CD4+ T-cell count  Continuous        cells/μL    Clinical        Primary marker of immune system health
+     CD8N                                  CD8+ T-cell count  Continuous        cells/μL    Clinical                   Marker of immune activation
+    CD4_8                                      CD4/CD8 ratio  Continuous           Ratio    Clinical                  Indicator of immune recovery
+  sqrtcd4                           Square root of CD4 count  Continuous     Transformed    Clinical   Variance-stabilizing transformation of CD4N
+  sqrtcd8                           Square root of CD8 count  Continuous     Transformed    Clinical   Variance-stabilizing transformation of CD8N
+ hemoglob                                   Hemoglobin level  Continuous            g/dL    Clinical                                 Anemia marker
+      Hgb               Hemoglobin measurement (alternative)  Continuous            g/dL    Clinical                Alternative hemoglobin measure
+ duration                          Duration of HIV diagnosis  Continuous           Years    Clinical                  Disease chronicity indicator
+durationy                    Duration as years (alternative)  Continuous           Years    Clinical                  Alternative duration measure
+ ageatvis                              Age at clinical visit  Continuous           Years Demographic                    Age at time of observation
+     nrti     Nucleoside reverse transcriptase inhibitor use      Binary     0=No, 1=Yes   Treatment                     NRTI medication indicator
+    nnrti Non-nucleoside reverse transcriptase inhibitor use      Binary     0=No, 1=Yes   Treatment                    NNRTI medication indicator
+       pi                             Protease inhibitor use      Binary     0=No, 1=Yes   Treatment                       PI medication indicator
+  anydrug                          Any recreational drug use      Binary     0=No, 1=Yes  Behavioral                    Indicator of substance use
+   APOBEC                            APOBEC3G genetic marker Categorical Genetic variant     Genetic Host genetic factor affecting viral evolution
+     APOB                            Apolipoprotein B marker Categorical Genetic variant     Genetic                          APOB genetic variant
+   APOBgr                          APOB group classification Categorical        Category     Genetic               APOB categorical classification
+  APOBgr2                        APOB group 2 classification Categorical        Category     Genetic                     Alternative APOB grouping
+   Hgbgen                                Hemoglobin genotype Categorical        Genotype     Genetic                    Hemoglobin genetic variant
+ HgbgenSS               Hemoglobin genotype SS (sickle cell)      Binary     0=No, 1=Yes     Genetic                   Sickle cell trait indicator
+ genotype                            General genotype marker Categorical         Variant     Genetic                    Additional genetic variant
+genotype3                                  Genotype marker 3 Categorical         Variant     Genetic                    Additional genetic variant
+     call                 Genotype quality control indicator Categorical     Call status     Genetic                       Genotyping quality flag
+     race                       Self-reported race/ethnicity Categorical        Category Demographic                 Race/ethnicity classification
+   apofer                                 Apoferritin marker  Continuous           ng/mL    Clinical          Iron storage indicator (apoferritin)
+    ferss                                    Ferritin marker  Continuous           ng/mL    Clinical             Iron storage indicator (ferritin)
+    aposs                            Related ferritin marker  Continuous           ng/mL    Clinical             Additional iron storage indicator

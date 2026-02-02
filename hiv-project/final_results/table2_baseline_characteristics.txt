@@ -1,0 +1,15 @@
+TABLE 2. Baseline Characteristics of Internal and External Validation Cohorts
+========================================================================================================================
+
+                          Variable    Category  Internal (n=26,408)   External (n=6,603) p-value           Test
+          Viral Suppression, n (%)     Outcome         8851 (33.5%)         2213 (33.5%)   0.999     Chi-square
+CD4 Count (cells/μL), median (IQR)    Clinical  439.0 (258.0-652.0)  437.0 (254.0-648.0)   0.277 Mann-Whitney U
+CD8 Count (cells/μL), median (IQR)    Clinical 789.0 (561.0-1092.0) 785.0 (547.0-1095.5)   0.252 Mann-Whitney U
+       CD4/CD8 Ratio, median (IQR)    Clinical        0.5 (0.3-0.8)        0.5 (0.3-0.8)   0.923 Mann-Whitney U
+   Hemoglobin (g/dL), median (IQR)    Clinical        5.5 (5.2-5.8)        5.5 (5.2-5.9)   0.851 Mann-Whitney U
+Age at Visit (years), median (IQR) Demographic     42.9 (36.7-49.3)     43.0 (36.5-49.3)   0.935 Mann-Whitney U
+HIV Duration (years), median (IQR)    Clinical    71.4 (28.7-126.9)    71.2 (28.5-128.0)   0.881 Mann-Whitney U
+                   NRTI Use, n (%)   Treatment          2023 (7.7%)           495 (7.5%)   0.674     Chi-square
+                  NNRTI Use, n (%)   Treatment         6291 (23.8%)         1540 (23.3%)   0.405     Chi-square
+     Protease Inhibitor Use, n (%)   Treatment         5212 (19.7%)         1261 (19.1%)   0.251     Chi-square
+     Hemoglobin Genotype SS, n (%)     Genetic             0 (0.0%)             0 (0.0%)   1.000   Fisher exact
